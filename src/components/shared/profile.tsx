@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Blinker } from "../ui/blinker";
 import { IconType } from "react-icons";
 import { useState, useRef } from "react";
-import { FiCode, FiGithub, FiInstagram, FiLinkedin, FiMail, FiPhoneCall } from "react-icons/fi";
+import { FiCode, FiDownload, FiGithub, FiInstagram, FiLinkedin, FiMail, FiPhoneCall } from "react-icons/fi";
 import { motion, useInView } from 'framer-motion'
 import Link from "next/link";
 
@@ -55,7 +55,7 @@ const Button = ({ label, icon, href , variants, className}: { label: string, ico
     const Icon = icon
     return (
         <motion.div className={`${className} w-full`} variants={variants}>
-            <Link href={href} className="flex gap-2 items-center justify-center w-full">{label} <Icon/></Link>
+            <Link href={href} className="flex gap-2 items-center justify-center w-full" target="__blank">{label} <Icon/></Link>
         </motion.div>
     )
 }
@@ -116,7 +116,7 @@ export default function Profile() {
                     ))}
                 </div>
 
-                <div className="grid grid-cols-[1fr_1fr] gap-2 w-full">
+                <div className="grid grid-cols-[1fr_1fr] gap-2 w-full mt-4">
                     <Button 
                         label="Shoot me an email" 
                         icon={FiMail} 
@@ -125,9 +125,9 @@ export default function Profile() {
                         className="bg-white rounded-[5px] text-black"
                     />
                     <Button 
-                        label="Call me" 
-                        icon={FiPhoneCall} 
-                        href="+91 7303421656" 
+                        label="Download resume" 
+                        icon={FiDownload} 
+                        href="https://drive.google.com/file/d/1c9fmbuacN5fq1YzA3sudLPyhpN0RtI8q/view?usp=sharing" 
                         variants={itemVariants} 
                         className="rounded-[5px] border-1 border-gray-300"
                     />
