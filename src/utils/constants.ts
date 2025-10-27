@@ -1,11 +1,22 @@
+import { TargetAndTransition, Transition, VariantLabels, ViewportOptions } from "framer-motion"
 import { FiCode, FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi"
 
-const ANIMATIONS = {
+export interface IAnimations {
+    animateOnScroll: {
+        initial: boolean | TargetAndTransition | VariantLabels | undefined,
+        whileInView: VariantLabels | TargetAndTransition | undefined,
+        viewport: ViewportOptions | undefined,
+        transition: Transition | undefined
+    }
+}
+
+const ANIMATIONS: IAnimations = {
     animateOnScroll: {
         initial: { opacity: 0, y: '-50%' },
         whileInView: { opacity: 1, y: 0 },
         viewport: { once: true },
         transition: {
+            // ease: [0.42, 0, 0.58, 1],
             duration: 0.5,
             staggerChildren: 0.5,
             delayChildren: 0.1
