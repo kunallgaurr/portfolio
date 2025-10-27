@@ -4,14 +4,15 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import { IconType } from "react-icons";
 import { FiBriefcase, FiFolder, FiHome, FiMail, FiUser } from "react-icons/fi";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
+import { constants } from "@/utils/constants";
 
-const NavbarItem = ({ label, icon, href, variants }: { label: string; icon: IconType; href: string; variants: any }) => {
+const NavbarItem = ({ label, icon, href }: { label: string; icon: IconType; href: string}) => {
     const [isHovered, setIsHovered] = useState(false);
     const Icon = icon;
 
     return (
-        <motion.div variants={variants}>
+        <motion.div {...constants.ANIMATIONS.animateOnScroll}>
             <Link
                 href={href}
                 className="flex items-center justify-center aspect-square relative hover:cursor-pointer hover:bg-black/10 rounded-md p-2 sm:w-full h-full"
@@ -35,38 +36,19 @@ const navbarItems = [
 ];
 
 export default function Navbar() {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
-
-    const navbarVariants = {
-        hidden: { opacity: 0, x: "-50%" },
-        visible: { opacity: 1, x: 0, transition: { staggerChildren: 0.2, delayChildren: 0.1 } },
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: "-50%" },
-        visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2, delayChildren: 0.1 } },
-    };
 
     return (
         <motion.div
-            ref={ref}
-            variants={navbarVariants}
-            initial="hidden"
-            animate="visible"
+            {...constants.ANIMATIONS.animateOnScroll}            
             className="
-                w-[var(--navbar-dimension)]
                 bg-[var(--navbar-background)]
                 p-1 flex gap-1
-                sm:h-full sm:flex-col sm:justify-center
-                sm:sticky sm:top-0 sm:left-0 bottom-0
-                fixed bottom-0 left-0 right-0
-                h-[50px] justify-around
-                z-50
+                fixed bottom-0 left-0 right-0 h-[50px] justify-around z-50
+                sm:sticky sm:top-0 sm:left-0 sm:h-full sm:flex-col sm:justify-center sm:w-[67px]
             "
         >
             {navbarItems.map((item, index) => (
-                <NavbarItem key={index} {...item} variants={itemVariants} />
+                <NavbarItem key={index} {...item} {...constants.ANIMATIONS.animateOnScroll} />
             ))}
         </motion.div>
     );
