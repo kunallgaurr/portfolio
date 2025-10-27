@@ -12,21 +12,9 @@ import { WorkInfo } from "@/components/ui/work-info";
 import { ProjectInfo } from "@/components/ui/project-info";
 
 export default function Home() {
-    const ref = useRef(null);
-
-    const transition: Transition = {
-        ease: [0.42, 0, 0.58, 1], // cubic-bezier equivalent to easeOut
-        duration: 0.5,
-    };
-
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, y: -30 },
-        visible: { opacity: 1, y: 0, transition },
-    };
-
     return (
         <div className="p-2 grid place-items-center">
-            <div ref={ref} className="flex flex-col gap-6 sm:w-[40%] w-[95%]">
+            <div className="flex flex-col gap-6 sm:w-[40%] w-[95%]">
                 <Profile />
 
                 <div className="flex flex-col gap-2">
