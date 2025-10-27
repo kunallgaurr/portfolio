@@ -1,11 +1,6 @@
 "use client";
 
 import Profile from "@/components/shared/profile";
-import Image from "next/image";
-import { motion, Transition, useInView, Variants } from "framer-motion";
-import { useRef } from "react";
-import Link from "next/link";
-import { constants } from "@/utils/constants";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Paragraph } from "@/components/ui/paragraph";
 import { WorkInfo } from "@/components/ui/work-info";

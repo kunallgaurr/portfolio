@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/navbar";
-import Profile from "@/components/shared/profile";
 import { AnimatePresence } from "framer-motion";
 
 const inter = Inter({

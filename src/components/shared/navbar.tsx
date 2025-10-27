@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { IconType } from "react-icons";
 import { FiBriefcase, FiFolder, FiHome, FiMail, FiUser } from "react-icons/fi";
 import { motion } from "framer-motion";

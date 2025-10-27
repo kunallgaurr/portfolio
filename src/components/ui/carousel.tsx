@@ -6,14 +6,12 @@ import Image from "next/image";
 export default function InfiniteCarousel({images}: {images: string[]}) {
   return (
     <div className="hidden sm:block w-[100%] overflow-hidden py-4 relative">
-      {/* Gradient fade on edges */}
       <div className="absolute top-0 left-0 w-8 sm:w-20 h-full z-10 pointer-events-none" />
       <div className="absolute top-0 right-0 w-8 sm:w-20 h-full z-10 pointer-events-none" />
 
-      {/* Carousel Track */}
       <motion.div
         className="flex gap-4 sm:gap-8"
-        animate={{ x: ["0%", "-50%"] }} // scroll half of the track, since we duplicated the array
+        animate={{ x: ["0%", "-50%"] }}
         transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
       >
         {[...images, ...images].map((src, index) => (

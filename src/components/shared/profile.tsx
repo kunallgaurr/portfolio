@@ -2,11 +2,8 @@
 
 import Image from "next/image";
 import { Blinker } from "../ui/blinker";
-import { IconType } from "react-icons";
-import { useState, useRef } from "react";
-import { FiCode, FiDownload, FiGithub, FiInstagram, FiLinkedin, FiMail } from "react-icons/fi";
-import { motion, useInView } from 'framer-motion'
-import Link from "next/link";
+import { FiDownload, FiMail } from "react-icons/fi";
+import { motion, } from 'framer-motion'
 import { constants } from "@/utils/constants";
 import { SocialLink } from "../ui/social-link";
 import { Button } from "../ui/button";

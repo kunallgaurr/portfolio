@@ -3,38 +3,8 @@
 import InfiniteCarousel from "@/components/ui/carousel";
 import { Paragraph } from "@/components/ui/paragraph";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Skill } from "@/components/ui/skill";
 import { constants } from "@/utils/constants";
-import Image from "next/image";
-
-const skills = [
-    { name: "Typescript", image: "/Typescript.png" },
-    { name: "Javascript", image: "/js.png" },
-    { name: "Node.js", image: "/Node.js.png" },
-    { name: "PostgreSQL", image: "/PostgresSQL.png" },
-    { name: "MongoDB", image: "/MongoDB.png" },
-    { name: "Redis", image: "/Redis.png" },
-    { name: "React", image: "/atom.png" },
-    { name: "Next.js", image: "/Next.js.png" },
-    { name: "Nest.js", image: "/Nest.js.png" },
-    { name: "Express", image: "/Express.png" },
-    { name: "Git", image: "/Git.png" },
-    { name: "GitHub", image: "/GitHub.png" },
-    { name: "GitLab", image: "/GitLab.png" },
-    { name: "Kubernetes", image: "/Kubernetes.png" },
-    { name: "Docker", image: "/Docker.png" },
-];
-
-function Skill({ image, name }: { image: string; name: string }) {
-    return (
-        <div
-            className="flex flex-col items-center justify-center bg-[var(--navbar-background)] rounded-xl p-3 
-      transition-all duration-300 hover:scale-105 hover:bg-[var(--card-hover)] border border-gray-800"
-        >
-            <Image src={image} alt={name} width={50} height={50} className="rounded-lg object-cover" />
-            <span className="text-xs mt-2 text-gray-300 font-medium">{name}</span>
-        </div>
-    );
-}
 
 export default function AboutPage() {
     return (
@@ -93,7 +63,7 @@ export default function AboutPage() {
 
                 {/* Skills Grid */}
                 <div className="grid grid-cols-3 sm:grid-cols-5 gap-3">
-                    {skills.map((skill, i) => (
+                    {constants.SKILLS.map((skill, i) => (
                         <Skill key={i} {...skill} />
                     ))}
                 </div>

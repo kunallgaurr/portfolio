@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { IconType } from "react-icons";
 import { motion } from "framer-motion";
 import { constants } from "@/utils/constants";

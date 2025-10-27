@@ -43,8 +43,27 @@ const IMAGES = [
     "/kunal-9.jpg",
 ];
 
+const SKILLS = [
+    { name: "Typescript", image: "/Typescript.png" },
+    { name: "Javascript", image: "/js.png" },
+    { name: "Node.js", image: "/Node.js.png" },
+    { name: "PostgreSQL", image: "/PostgresSQL.png" },
+    { name: "MongoDB", image: "/MongoDB.png" },
+    { name: "Redis", image: "/Redis.png" },
+    { name: "React", image: "/atom.png" },
+    { name: "Next.js", image: "/Next.js.png" },
+    { name: "Nest.js", image: "/Nest.js.png" },
+    { name: "Express", image: "/Express.png" },
+    { name: "Git", image: "/Git.png" },
+    { name: "GitHub", image: "/GitHub.png" },
+    { name: "GitLab", image: "/GitLab.png" },
+    { name: "Kubernetes", image: "/Kubernetes.png" },
+    { name: "Docker", image: "/Docker.png" },
+];
+
 export const constants = {
     ANIMATIONS,
     SOCIAL_LINKS,
-    IMAGES
+    IMAGES,
+    SKILLS
 }
